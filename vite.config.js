@@ -1,19 +1,13 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  root: 'src',
   base: './',
   server: {
-    open: '/src/index.html',
+    open: '/index.html',
   },
   build: {
-    outDir: 'dist',
+    outDir: '../dist',
     emptyOutDir: true,
-    rollupOptions: {
-      input: {
-        main: './src/index.html',
-        timer: './src/1-timer.html',
-        snackbar: './src/2-snackbar.html',
-      },
-    },
   },
 });
