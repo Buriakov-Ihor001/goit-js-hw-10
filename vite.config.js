@@ -1,17 +1,19 @@
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
 
 export default defineConfig({
-  root: 'src',
+  base: './',
+  server: {
+    open: '/src/index.html',
+  },
   build: {
+    outDir: 'dist',
+    emptyOutDir: true,
     rollupOptions: {
       input: {
-
-        main: resolve(__dirname, 'src/index.html'),
-        gallery: resolve(__dirname, 'src/1-gallery.html'),
-        form: resolve(__dirname, 'src/2-form.html'),
+        main: './src/index.html',
+        timer: './src/1-timer.html',
+        snackbar: './src/2-snackbar.html',
       },
     },
-    outDir: '../dist',
   },
 });
